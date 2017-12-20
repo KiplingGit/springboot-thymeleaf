@@ -27,9 +27,10 @@ public class MybatisConfig {
 
 	@Bean
 	public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
-		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+	SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+		//SqlSessionFactoryBean sqlSessionFactoryBean = new PackagesSqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource());
-		sqlSessionFactoryBean.setTypeAliasesPackage("me.kipling.springboot.mybatis.domain");
+		sqlSessionFactoryBean.setTypeAliasesPackage("me.kipling.springboot.thymeleaf.domain");
 		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 		sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:mapper/*.xml"));
 		return sqlSessionFactoryBean.getObject();
