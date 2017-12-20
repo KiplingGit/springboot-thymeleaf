@@ -11,6 +11,7 @@ public class Application {
 	protected static Logger logger = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) {
+		
 		SpringApplication.run(Application.class, args);
 		logger.info("SpringBoot Start Success");
 	}
