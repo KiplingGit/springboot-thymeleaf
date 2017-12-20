@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- 
+<a th:href="@{http://blog.csdn.net/u012706811}">绝对路径</a>
+<a th:href="@{/}">相对路径</a>
+<a th:href="@{css/bootstrap.min.css}">Content路径,默认访问static下的css文件夹</a>
+ -->
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
@@ -10,5 +15,14 @@
 	<hr />
 	Welcome,
 	<span th:text="${name}"></span>
+
+	<p th:text="'Hello！, ' + ${name} + '!'">3333</p>
+
+
+	<!-- 当然这种形式限制比较多，|…|中只能包含变量表达式${…}，不能包含其他常量、条件表达式等。 -->
+	<span th:text="|Welcome to our application, ${name}!|"></span>
+
+
+
 </body>
 </html>
