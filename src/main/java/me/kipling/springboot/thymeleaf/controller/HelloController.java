@@ -4,8 +4,11 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import me.kipling.springboot.thymeleaf.domain.User;
 
 /**
  * 这里使用@Controller,而不是@RestController注解
@@ -37,6 +40,23 @@ public class HelloController {
 		map.put("name", "HowieLi");
 		return "hello";
 	}
+	
+	@GetMapping(value = "/aa")
+	public String toaa(Model model) {
+		User user = new User();
+		user.setAge(27);
+		user.setName("Kipling");
+		model.addAttribute(user);
+		return "user/aa";
+	}
+	
+	//提交表单后进行数据读取，并将数据传出
+    @RequestMapping(value = "/bb",method = RequestMethod.POST)
+    public String bb(User user,Model model) {
+        model.addAttribute("user", user);
+        model.addAttribute("message", ",welcome");
+        return "user/bb";
+    }
 	
 	/**
      * 测试hello

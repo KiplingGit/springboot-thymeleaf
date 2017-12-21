@@ -16,6 +16,10 @@
 		<java.version>1.8</java.version>
 		<mybatis.version>3.3.0</mybatis.version>
 		<mybatis-spring.version>1.2.3</mybatis-spring.version>
+
+		<!--引入themeleaf 在spring-boot1.4之后,支持thymeleaf3,可以更改版本号来进行修改支持. 3相比2极大的提高了效率,并且不需要标签闭合,类似的link,img等都有了很好的支持,按照如下配置即可 -->
+		<thymeleaf.version> 3.0.2.RELEASE </thymeleaf.version>
+		<thymeleaf-layout-dialect.version> 2.1.1 </thymeleaf-layout-dialect.version>
 	</properties>
 
 	<dependencies>

@@ -10,19 +10,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<font color="red">Hello Thymeleaf.</font>
-
+	<font color="red">Hello Thymeleaf.[[${name}]]--[[name]]---[${name}]----${name}</font>
 	<hr />
 	Welcome,
-	<span th:text="${name}"></span>
-
+	<span th:text="${name}" ></span>
 	<p th:text="'Hello！, ' + ${name} + '!'">3333</p>
-
-
 	<!-- 当然这种形式限制比较多，|…|中只能包含变量表达式${…}，不能包含其他常量、条件表达式等。 -->
 	<span th:text="|Welcome to our application, ${name}!|"></span>
-
-
-
 </body>
 </html>
